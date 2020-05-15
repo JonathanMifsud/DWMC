@@ -5,16 +5,24 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed; //Movement Speed
+    private Rigidbody2D rb;
+    private Vector2 moveVelocity;
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        KeyInput();
+        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")); //Left Arrow & Right Arrow Keys
+        moveVelocity = moveInput * speed; 
+        //KeyInput();
+    }
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
     void KeyInput()
     {
