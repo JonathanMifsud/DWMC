@@ -70,4 +70,18 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false; //Player not on ground
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Equals("Lift"))
+        {
+            this.transform.parent = collision.transform;
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Equals("Lift"))
+        {
+            this.transform.parent = null;
+        }
+    }
 }
