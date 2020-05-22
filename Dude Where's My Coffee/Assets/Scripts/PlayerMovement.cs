@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public int maxHealth = 4; //Max health for player
+    public int currentHealth; //Variable holding player's health
+    public HealthBar healthBar;
+
     public float speed; //Movement Speed
     private Rigidbody2D rb;
 
@@ -22,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth; //Sets current health
+        healthBar.SetMaxHealth(maxHealth);
     }
     // Update is called once per frame
     void Update()
@@ -70,7 +76,18 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false; //Player not on ground
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+    }
+    private void OnCollisionEnter2D(Collision collision)
+    {
+        if (collision.gameObject.name.Equals("Item"))
+        {
+            TakeDamage(1);
+        }
+    }
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name.Equals("Lift"))
         {
@@ -83,5 +100,5 @@ public class PlayerMovement : MonoBehaviour
         {
             this.transform.parent = null;
         }
-    }
+    }*/
 }
