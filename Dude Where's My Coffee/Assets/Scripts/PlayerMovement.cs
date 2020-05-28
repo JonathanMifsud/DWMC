@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int maxHealth = 4; //Max health for player
+    public int maxHealth = 100; //Max health for player
     public int currentHealth; //Variable holding player's health
     public HealthBar healthBar;
 
@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer; //Layer considered as Ground to the player
     public float rememberGroundedFor; //Player stays grounded
     float lastTimeGrounded; //Last time player on ground
+
+    public Vector3 respawnPoint; //Position of respawn point
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +50,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor)) //If the player selects the SPACE key
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpUp);
+            TakeDamage(20); //Reduce health when jump - damage TEST
         }
+    }
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage; //Reduces player health
     }
     void SmootherJump()
     {
@@ -76,29 +83,22 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false; //Player not on ground
         }
     }
-    void TakeDamage(int damage)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        currentHealth -= damage;
+        if(collision.tag == "FallDetector") //If player collides with fall detector
+        {
+            transform.position = respawnPoint;//respawn
+        }
+        if(collision.tag == "Checkpoint")
+        {
+            respawnPoint = collision.transform.position; //Sets the respawn point to checkpoint position
+        }
     }
-    private void OnCollisionEnter2D(Collision collision)
+    /*private void OnCollisionEnter2D(Collision collision)
     {
         if (collision.gameObject.name.Equals("Item"))
         {
             TakeDamage(1);
-        }
-    }
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name.Equals("Lift"))
-        {
-            this.transform.parent = collision.transform;
-        }
-    }
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.name.Equals("Lift"))
-        {
-            this.transform.parent = null;
         }
     }*/
 }

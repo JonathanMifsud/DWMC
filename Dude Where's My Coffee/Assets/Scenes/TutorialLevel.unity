@@ -185,6 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a888ab6bf47e940b4bcab747563655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
   speed: 4
   jumpUp: 8
   jumpFall: 2.5
@@ -596,7 +599,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &872554965
@@ -1055,12 +1058,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1814797677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0dc5a670e28bb649902056dd97843e4, type: 3}
+  m_Script: {fileID: 11500000, guid: b767c6862bd6a954fa3557355968c8cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pos1: {fileID: 1657659806}
   pos2: {fileID: 445799487}
-  speed: 1
+  speed: 3
   startPos: {fileID: 1657659806}
 --- !u!50 &1814797681
 Rigidbody2D:
