@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public GameObject Checkpoints;
+    private PlayerMovement player;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -33,5 +36,12 @@ public class LevelManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+    }
+    public void Respawn()
+    {
+        Debug.Log("Respawn"); //test respawn
+        player.currentHealth = player.maxHealth; //Resets healthbar
+        player.transform.position = Checkpoints.transform.position;
+
     }
 }

@@ -8,11 +8,13 @@ public class CheckpointControl : MonoBehaviour
     public Sprite TrueCheckpoint;
     private SpriteRenderer checkpointSpriteRenderer;
     public bool CheckpointReached;
+    public LevelManager levelmanager;
 
     // Start is called before the first frame update
     void Start()
     {
         checkpointSpriteRenderer = GetComponent<SpriteRenderer>(); //Grabs sprite
+        levelmanager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class CheckpointControl : MonoBehaviour
         {
             checkpointSpriteRenderer.sprite = TrueCheckpoint; //Changes sprite
             CheckpointReached = true; //Sets Checkpoint progress
+            levelmanager.Checkpoints = gameObject;
         }
     }
 }
