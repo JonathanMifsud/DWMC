@@ -121,6 +121,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &85486566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 85486568}
+  - component: {fileID: 85486567}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &85486567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85486566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216f5a33d7914e241813e6e09fb58dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Checkpoints: {fileID: 0}
+--- !u!4 &85486568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85486566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 29.332664, y: 3.406837, z: -3.3085938}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &109605833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +2425,7 @@ Transform:
   - {fileID: 1941424156}
   - {fileID: 1211851785}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211851782
 GameObject:
@@ -3251,7 +3295,7 @@ Transform:
   - {fileID: 2036284566}
   - {fileID: 1304203340}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401244626
 GameObject:
@@ -4606,16 +4650,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a888ab6bf47e940b4bcab747563655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
   speed: 5
-  jumpUp: 4
-  jumpFall: 2
-  lowJumpFall: 1
+  jumpSpeed: 5
+  rememberGroundedFor: 0.1
   isGroundedChecker: {fileID: 1316756932}
   checkGroundRadius: 0.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  rememberGroundedFor: 0.1
+  respawnPoint: {x: 0, y: 0, z: 0}
+  levelmanager: {fileID: 0}
 --- !u!50 &2042333595
 Rigidbody2D:
   serializedVersion: 4
@@ -4700,7 +4747,7 @@ Transform:
   m_Children:
   - {fileID: 1014518633}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2042333598
 BoxCollider2D:
