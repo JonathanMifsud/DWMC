@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         Escape();
-        Pause();
+        //Pause();
     }
     void Escape()
     {

@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1761460583
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -8245734836038691942, guid: 88fdf66fbebe1ce4c8967d2fd9c6dd88,
     type: 3}
@@ -117,3 +117,4 @@ MonoBehaviour:
   TrueCheckpoint: {fileID: -6865875935168807738, guid: f2d234a7072661d4586f261b57f2c6c6,
     type: 3}
   CheckpointReached: 0
+  levelmanager: {fileID: 0}

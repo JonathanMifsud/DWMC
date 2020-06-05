@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 16913
+  controlID: 14376
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 12042}
   vertical: 1
-  controlID: 16855
+  controlID: 14425
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 321}
   m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
-  controlID: 16836
+  controlID: 14383
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_MinSize: {x: 508, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 0
-  controlID: 16914
+  controlID: 14377
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 16893
+  controlID: 14463
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -505,9 +505,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 157.64099, y: 87.41799, z: -6.394337}
+    m_Target: {x: -4.3406725, y: 3.154506, z: -50.865307}
     speed: 2
-    m_Value: {x: 157.64099, y: 87.41799, z: -6.394337}
+    m_Value: {x: -4.4493594, y: 3.3447087, z: -50.832035}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -557,9 +557,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 100.44294
+    m_Target: 8.822691
     speed: 2
-    m_Value: 100.44294
+    m_Value: 9.23842
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -4528
+  m_LastSelectedObjectID: 14206
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1232,9 +1232,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 88b6ffffcab8ffff68baffff94c0ffff70c2fffff6c4ffff7cccffff7aceffff30cfffff5ccfffffaccfffffccd8ffff50eeffff5aeeffffa6eeffffd2eeffff76f0ffffd2f1ffff6cf2fffff0f8ffff42faffff6efaffff82faffff60fbffffbe3e00006e3f000086420000804a0000944a0000184b0000044d0000184d00001c65000034650000a8650000c46500002e6d00005a6f0000b66f00001e7a00008c7a00009e7a00001c7c0000
+      m_SelectedIDs: f4f7ffff
+      m_LastClickedID: -2060
+      m_ExpandedIDs: e4efffff0cf0ffffb4f5fffff4f7ffff9cf8ffff16faffff6cfbffff263700007e370000c6370000e2370000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1328,11 +1328,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\INTRO GAMES DESIGN\Dude_Wheres_My_Coffee\Dude Where's My
     Coffee
@@ -1340,9 +1340,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a0370000
-    m_LastClickedID: 14240
-    m_ExpandedIDs: 000000009037000000ca9a3b
+    m_SelectedIDs: a2380000
+    m_LastClickedID: 14498
+    m_ExpandedIDs: 000000009838000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1370,7 +1370,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009037000000ca9a3b
+    m_ExpandedIDs: 000000009838000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1398,7 +1398,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 8a1c0000c0260000762f00004a23000090310000e22b00004e23000036240000000000008a28000068280000e2290000de270000042d00009e2a000094320000f0300000563700007a3a0000d44900001a3f0000de3c0000383f0000dc560000ea560000863d0000d23a0000103b0000183b0000143b0000f6370000
+    m_ExpandedInstanceIDs: 8a1c0000c0260000762f00004a23000090310000e22b00004e23000036240000000000008a28000068280000e2290000de270000042d00009e2a000094320000f0300000563700007a3a0000d44900001a3f0000de3c0000383f0000dc560000ea560000863d0000d23a0000103b0000183b0000143b0000f6370000663a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
