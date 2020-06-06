@@ -7,6 +7,8 @@ TagManager:
   - FallDetector
   - Checkpoint
   - ShowOnPause
+  - turn
+  - Turn
   layers:
   - Default
   - TransparentFX

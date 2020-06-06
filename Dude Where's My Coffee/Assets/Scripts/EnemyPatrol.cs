@@ -5,20 +5,14 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour
 {
     public float speed;
-    public float distance;
-    private bool movingRight = true; //Starts game by moving right
-    public Transform groundDetection;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //public float distance;
+    public bool movingRight; //Starts game by moving right
+    //public Transform groundDetection;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        /*transform.Translate(Vector2.right * speed * Time.deltaTime);
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance); //Ray created of ground and ray goes down
         if(groundInfo.collider == false)
         {
@@ -30,6 +24,30 @@ public class EnemyPatrol : MonoBehaviour
             else
             {
                 transform.eulerAngles = new Vector3(0, 0, 0); //Enemy moves right
+                movingRight = true;
+            }
+        }*/
+        if (movingRight)
+        {
+            transform.Translate(2 * Time.deltaTime * speed, 0, 0);
+            transform.localScale = new Vector2(2, 2);
+        }
+        else
+        {
+            transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
+            transform.localScale = new Vector2(-2, 2);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("turn"))
+        {
+            if (movingRight)
+            {
+                movingRight = false;
+            }
+            else
+            {
                 movingRight = true;
             }
         }
