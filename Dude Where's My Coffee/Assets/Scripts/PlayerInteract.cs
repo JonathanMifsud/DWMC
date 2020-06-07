@@ -17,7 +17,31 @@ public class PlayerInteract : MonoBehaviour
             {
                 inventory.AddItem(currentInteractObj);
             }
-
+            
+            // Check to see if this object can be opened
+            if (currentInteractObjScript.openable)
+            {
+                // Check to see if the object is locked
+                if (currentInteractObjScript.locked)
+                {
+                    // Check to see if we have the object needed to unlock
+                    // Look inside inventory for needed item, if inside then unlock object
+                    if (inventory.FindItem(currentInteractObjScript.itemNeeded))
+                    {
+                        // Needed item found
+                        currentInteractObjScript.locked = false;
+                        Debug.Log(currentInteractObj.name + " was unlocked");
+                    } else
+                    {
+                        Debug.Log(currentInteractObj.name + " was not unlocked");
+                    }
+                } else
+                {
+                    // Object is not locked, open the object
+                    Debug.Log(currentInteractObj.name + "is unlocked");
+                    currentInteractObjScript.Open();
+                }
+            }
         }
     }
 

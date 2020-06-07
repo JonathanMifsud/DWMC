@@ -30,4 +30,18 @@ public class Inventory : MonoBehaviour
             Debug.Log("Inventory Full - Item Not Added");
         }
     }
+
+    public bool FindItem(GameObject item)
+    {
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory [i] == item)
+            {
+                // Item is found
+                return true;
+            }
+        }
+        // Item not found
+        return false;
+    }
 }
