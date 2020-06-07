@@ -7,6 +7,7 @@ TagManager:
   - FallDetector
   - Checkpoint
   - ShowOnPause
+  - Interactable
   layers:
   - Default
   - TransparentFX
