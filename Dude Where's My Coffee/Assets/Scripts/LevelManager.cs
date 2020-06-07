@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         Escape();
-        //Pause();
+        Pause();
     }
     void Escape()
     {
@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene("MainMenu"); //Moves scene to Main Menu
         }
     }
-    /*void Pause()
+    void Pause()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-    }*/
+    }
     public void Respawn()
     {
         Debug.Log("Respawn"); //test respawn

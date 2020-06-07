@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpSpeed = 5f;
 
+    public float distance;
+    public LayerMask whatIsLadder;
+    private bool isClimbing;
+    private float inputVertical;
+
     private bool isGrounded = false; //Checks if character is on the ground. True on ground, false in air.
     public float rememberGroundedFor; //Player stays grounded
     float lastTimeGrounded; //Last time player on ground
@@ -40,14 +45,48 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        //Move();
         Jump();
         //SmootherJump();
         CheckIfGrounded();
     }
-    void Move()
+
+    void FixedUpdate() {
+        movement = Input.GetAxisRaw("Horizontal");
+        if (movement > 0f) //move right
+        {
+            rb.velocity = new Vector2(movement * speed, rb.velocity.y);
+        } else if (movement < 0f) //Moveleft
+        {
+            rb.velocity = new Vector2(movement * speed, rb.velocity.y);
+        } else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y); //still
+        }
+
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, distance, whatIsLadder);
+
+        if(hitInfo.collider !=null){
+            if(Input.GetKeyDown(KeyCode.UpArrow)){
+                isClimbing = true;
+            }
+        }else {
+            if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)){
+                isClimbing = false;
+            }
+        }
+        
+        if(isClimbing == true && hitInfo.collider !=null){
+            inputVertical = Input.GetAxisRaw("Vertical");
+            rb.velocity = new Vector2(rb.velocity.x, inputVertical * speed);
+            rb.gravityScale = 0;
+        } else{
+            rb.gravityScale = 5;
+        }
+    }
+    /*void Move()
     {
-        movement = Input.GetAxis("Horizontal");
+        movement = Input.GetAxisRaw("Horizontal");
         if (movement > 0f) //move right
         {
             rb.velocity = new Vector2(movement * speed, rb.velocity.y);
@@ -59,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y); //still
         }
         
-    }
+    }*/
     void Jump()
     {
         isGrounded = Physics2D.OverlapCircle(isGroundedChecker.position, checkGroundRadius, groundLayer);
