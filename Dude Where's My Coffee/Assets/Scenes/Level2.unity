@@ -4496,6 +4496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14bdfaec9cc87c4a8d064642b0ded14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: 1
 --- !u!212 &2043321724
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4575,8 +4576,9 @@ GameObject:
   - component: {fileID: 2099313177}
   - component: {fileID: 2099313176}
   - component: {fileID: 2099313182}
+  - component: {fileID: 2099313183}
   m_Layer: 0
-  m_Name: Player (1)
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4744,6 +4746,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentInteractObj: {fileID: 0}
+  currentInteractObjScript: {fileID: 0}
+  inventory: {fileID: 2099313183}
+--- !u!114 &2099313183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099313175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e22cf29889ac66459b61918b6fe8769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2131845625
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,12 +5,19 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     public GameObject currentInteractObj = null;
+    public InteractionObject currentInteractObjScript = null;
+    public Inventory inventory;
 
     void Update()
     {
         if (Input.GetButtonDown ("Interact") && currentInteractObj)
         {
-            currentInteractObj.SendMessage("DoInteraction");
+            // Checks if object can be placed in inventory
+            if (currentInteractObjScript.inventory)
+            {
+                inventory.AddItem(currentInteractObj);
+            }
+
         }
     }
 
@@ -20,6 +27,7 @@ public class PlayerInteract : MonoBehaviour
         {
             Debug.Log(other.name);
             currentInteractObj = other.gameObject;
+            currentInteractObjScript = currentInteractObj.GetComponent<InteractionObject>();
         }
     }
 
