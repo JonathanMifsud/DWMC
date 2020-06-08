@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         Jump();
+        Flip();
         //SmootherJump();
         CheckIfGrounded();
     }
@@ -58,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y); //still
         }
-        
+        //transform.Translate(Input.GetAxis("Horiontal") * 15f * Time.deltaTime, 0f, 0f);
     }
     void Jump()
     {
@@ -73,6 +74,19 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpUp);
             TakeDamage(20); //Reduce health when jump - damage TEST
         }*/
+    }
+    void Flip() //Flip Character
+    {
+        Vector3 characterScale = transform.localScale;
+        if(Input.GetAxis("Horizontal") < 0)
+        {
+            characterScale.x = -1;
+        }
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            characterScale.x = 1;
+        }
+        transform.localScale = characterScale;
     }
     public void TakeDamage(int damage)
     {
