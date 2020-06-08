@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 118670589}
   - component: {fileID: 118670591}
   - component: {fileID: 118670590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1001,7 +1001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1149947809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 1583404509}
   - component: {fileID: 1583404508}
   - component: {fileID: 1583404510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4566,7 +4566,7 @@ GameObject:
   - component: {fileID: 1819508591}
   - component: {fileID: 1819508590}
   - component: {fileID: 1819508589}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4810,7 +4810,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 877035411}
   speed: 5
-  jumpSpeed: 5
+  jumpSpeed: 6
   rememberGroundedFor: 1
   isGroundedChecker: {fileID: 548346836}
   checkGroundRadius: 0.5
@@ -4818,7 +4818,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   respawnPoint: {x: 0, y: 0, z: 0}
-  levelmanager: {fileID: 0}
+  levelmanager: {fileID: 85486567}
 --- !u!70 &2099313177
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
