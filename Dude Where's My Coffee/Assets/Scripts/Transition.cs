@@ -20,6 +20,10 @@ public class Transition : MonoBehaviour
 
     IEnumerator End(Collider2D player){
             canvas.gameObject.SetActive(true);
+
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            
             yield return new WaitForSeconds (tillchange);
             SceneManager.LoadScene("Level2");
 
