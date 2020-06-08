@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class PlayerInteract : MonoBehaviour
                         // Needed item found
                         currentInteractObjScript.locked = false;
                         Debug.Log(currentInteractObj.name + " was unlocked");
+                        SceneManager.LoadScene(sceneBuildIndex: 4);
                     } else
                     {
                         Debug.Log(currentInteractObj.name + " was not unlocked");
