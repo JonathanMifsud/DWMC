@@ -132,11 +132,4 @@ public class PlayerMovement : MonoBehaviour
             respawnPoint = collision.transform.position; //Sets the respawn point to checkpoint position
         }
     }
-    /*private void OnCollisionEnter2D(Collision collision)
-    {
-        if (collision.gameObject.name.Equals("Item"))
-        {
-            TakeDamage(1);
-        }
-    }*/
 }

@@ -30,26 +30,43 @@ public class EnemyPatrol : MonoBehaviour
         if (movingRight)
         {
             transform.Translate(2 * Time.deltaTime * speed, 0, 0);
-            transform.localScale = new Vector2(2, 2);
+            transform.localScale = new Vector2(1, 1);
         }
         else
         {
             transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
-            transform.localScale = new Vector2(-2, 2);
+            transform.localScale = new Vector2(-1, 1);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("turn"))
+        Debug.Log("collide");
+        if (collision.gameObject.CompareTag("turn"))
         {
             if (movingRight)
             {
                 movingRight = false;
+                Flip();
             }
             else
             {
                 movingRight = true;
+                Flip();
             }
+            Debug.Log("flip");
         }
+    }
+    public void Flip() //Flip Character
+    {
+        Vector3 characterScale = transform.localScale;
+        if (movingRight == true)
+        {
+            characterScale.x = -1;
+        }
+        if (movingRight == false)
+        {
+            characterScale.x = 1;
+        }
+        transform.localScale = characterScale;
     }
 }
